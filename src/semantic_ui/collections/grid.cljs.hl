@@ -1,0 +1,18 @@
+(ns semantic-ui.collections.grid
+  (:require [clojure.string :as s]
+            [semantic-ui.core :as semui]))
+
+(defelem grid [attr kids]
+  (-> attr
+      (assoc :extends semui/countelem :count-attr :column :count-class "column" :pre-class {:ui true} :post-class {:grid true})
+      (semui/extelem kids)))
+
+(defelem column [attr kids]
+  (-> attr
+      (assoc :extends semui/countelem :count-attr :width :count-class "wide column" :post-class {:column true})
+      (semui/extelem kids)))
+
+(defelem row [attr kids]
+  (-> attr
+      (assoc :extends semui/countelem :count-attr :width :count-class "column" :post-class {:row true})
+      (semui/extelem kids)))

@@ -1,0 +1,33 @@
+(ns semantic-ui.collections.menu
+  (:refer-hoplon :exclude [menu])
+  (:require [semantic-ui.core :as semui]))
+
+(defelem menu [attr kids]
+  (-> attr
+      (assoc :extends semui/countelem :count-attr :count-items :count-items true :pre-class {:ui true} :post-class {:menu true})
+      (semui/extelem kids)))
+
+(defelem tabular-menu [attr kids]
+  (-> attr
+      (assoc :extends menu :post-class {:tabular true})
+      (semui/extelem kids)))
+
+(defelem vertical-tabular-menu [attr kids]
+  (-> attr
+      (assoc :extends tabular-menu :post-class {:vertical true})
+      (semui/extelem kids)))
+
+(defelem item [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class {:ui true} :post-class {:item true})
+      (semui/extelem kids)))
+
+(defelem right-item [attr kids]
+  (-> attr
+      (assoc :extends item :post-class {:right true})
+      (semui/extelem kids)))
+
+(defelem link-item [attr kids]
+  (-> attr
+      (assoc :extends a :pre-class [:ui] :post-class [:link])
+      (semui/extelem kids)))

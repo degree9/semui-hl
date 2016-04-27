@@ -1,0 +1,32 @@
+(ns semantic-ui.elements.image
+  (:require [semantic-ui.core :as semui]))
+
+(defelem image [attr kids]
+  (-> attr
+      (assoc :extends img :pre-class [:ui] :post-class [:image])
+      (semui/extelem kids)))
+
+(defelem images [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:images])
+      (semui/extelem kids)))
+
+(defelem avatar [attr kids]
+  (-> attr
+      (assoc :extends image :post-class [:avatar])
+      (semui/extelem kids)))
+
+(defelem bordered [attr kids]
+  (-> attr
+      (assoc :extends image :post-class [:bordered])
+      (semui/extelem kids)))
+
+(defelem fluid [attr kids]
+  (-> attr
+      (assoc :extends image :post-class [:fluid])
+      (semui/extelem kids)))
+
+(defelem circular [attr kids]
+  (-> attr
+      (assoc :extends image :post-class [:circular])
+      (semui/extelem kids)))

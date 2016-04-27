@@ -1,0 +1,77 @@
+(ns semantic-ui.elements.list
+  (:require [semantic-ui.core :as semui]))
+
+(defelem list [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:list])
+      (semui/extelem kids)))
+
+(defelem item [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:item])
+      (semui/extelem kids)))
+
+(defelem content [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:content])
+      (semui/extelem kids)))
+
+(defelem header [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:header])
+      (semui/extelem kids)))
+
+(defelem description [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:description])
+      (semui/extelem kids)))
+
+(defelem horizontal-list [attr kids]
+  (-> attr
+      (assoc :extends list :post-class [:horizontal])
+      (semui/extelem kids)))
+
+(defelem selection-list [attr kids]
+  (-> attr
+      (assoc :extends list :post-class [:selection])
+      (semui/extelem kids)))
+
+(defelem divided-list [attr kids]
+  (-> attr
+      (assoc :extends list :post-class [:divided])
+      (semui/extelem kids)))
+
+(defelem celled-list [attr kids]
+  (-> attr
+      (assoc :extends list :post-class [:celled])
+      (semui/extelem kids)))
+
+(defelem animated-list [attr kids]
+  (-> attr
+      (assoc :extends list :post-class [:animated])
+      (semui/extelem kids)))
+
+(defelem relaxed-list [attr kids]
+  (-> attr
+      (assoc :extends list :post-class [:relaxed])
+      (semui/extelem kids)))
+
+(defelem bulleted-list [attr kids]
+  (-> attr
+      (assoc :extends list :post-class [:bulleted])
+      (semui/extelem kids)))
+
+(defelem unordered-list [attr kids]
+  (-> attr
+      (assoc :extends ul :pre-class [:ui] :post-class [:list])
+      (semui/extelem kids)))
+
+(defelem numbered-list [attr kids]
+  (-> attr
+      (assoc :extends list :post-class [:ordered])
+      (semui/extelem kids)))
+
+(defelem ordered-list [attr kids]
+  (-> attr
+      (assoc :extends ol :pre-class [:ui] :post-class [:list])
+      (semui/extelem kids)))

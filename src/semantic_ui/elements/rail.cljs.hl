@@ -1,0 +1,52 @@
+(ns semantic-ui.elements.rail
+  (:require [semantic-ui.core :as semui]))
+
+(defelem rail [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:rail])
+      (semui/extelem kids)))
+
+(defelem internal-rail [attr kids]
+  (-> attr
+      (assoc :extends rail :post-class [:internal])
+      (semui/extelem kids)))
+
+(defelem dividing-rail [attr kids]
+  (-> attr
+      (assoc :extends rail :post-class [:dividing])
+      (semui/extelem kids)))
+
+(defelem attached-rail [attr kids]
+  (-> attr
+      (assoc :extends rail :post-class [:internal])
+      (semui/extelem kids)))
+
+(defelem close-rail [attr kids]
+  (-> attr
+      (assoc :extends rail :post-class [:close])
+      (semui/extelem kids)))
+
+(defelem very-close-rail [attr kids]
+  (-> attr
+      (assoc :extends close-rail :post-class [:very])
+      (semui/extelem kids)))
+
+(defelem right-rail [attr kids]
+  (-> attr
+      (assoc :extends rail :post-class [:right])
+      (semui/extelem kids)))
+
+(defelem left-rail [attr kids]
+  (-> attr
+      (assoc :extends rail :post-class [:left])
+      (semui/extelem kids)))
+
+(defelem right-internal-rail [attr kids]
+  (-> attr
+      (assoc :extends internal-rail :post-class [:right])
+      (semui/extelem kids)))
+
+(defelem left-internal-rail [attr kids]
+  (-> attr
+      (assoc :extends internal-rail :post-class [:left])
+      (semui/extelem kids)))

@@ -1,0 +1,12 @@
+(ns semantic-ui.modules.progress
+  (:require [semantic-ui.core :as semui]))
+
+(defelem progress [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:progress])
+      (semui/extelem kids)))
+
+(defmethod do! :progress
+  [elem _ v]
+  (when v
+    (.progress (js/jQuery elem) (clj->js v))))

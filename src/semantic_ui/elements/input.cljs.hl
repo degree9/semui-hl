@@ -1,0 +1,42 @@
+(ns semantic-ui.elements.input
+  (:require [semantic-ui.core :as semui]))
+
+(defelem input [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:input])
+      (semui/extelem kids)))
+
+(defelem icon-input [attr kids]
+  (-> attr
+      (assoc :extends input :post-class [:icon])
+      (semui/extelem kids)))
+
+(defelem labeled-input [attr kids]
+  (-> attr
+      (assoc :extends input :post-class [:labeled])
+      (semui/extelem kids)))
+
+(defelem right-labeled-input [attr kids]
+  (-> attr
+      (assoc :extends labeled-input :post-class [:right])
+      (semui/extelem kids)))
+
+(defelem action-input [attr kids]
+  (-> attr
+      (assoc :extends input :post-class [:action])
+      (semui/extelem kids)))
+
+(defelem right-action-input [attr kids]
+  (-> attr
+      (assoc :extends action-input :post-class [:right])
+      (semui/extelem kids)))
+
+(defelem transparent-input [attr kids]
+  (-> attr
+      (assoc :extends input :post-class [:transparent])
+      (semui/extelem kids)))
+
+(defelem fluid-input [attr kids]
+  (-> attr
+      (assoc :extends input :post-class [:fluid])
+      (semui/extelem kids)))

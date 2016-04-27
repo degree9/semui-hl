@@ -1,0 +1,110 @@
+(ns semantic-ui.elements.segment
+  (:require [semantic-ui.core :as semui]))
+
+;;Segments
+
+(defelem segments [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class {:ui true} :post-class {:segments true})
+      (semui/extelem kids)))
+
+(defelem horizontal-segments [attr kids]
+  (-> attr
+      (assoc :extends segments :post-class {:horizontal true})
+      (semui/extelem kids)))
+
+(defelem raised-segments [attr kids]
+  (-> attr
+      (assoc :extends segments :post-class {:raised true})
+      (semui/extelem kids)))
+
+(defelem stacked-segments [attr kids]
+  (-> attr
+      (assoc :extends segments :post-class {:stacked true})
+      (semui/extelem kids)))
+
+(defelem piled-segments [attr kids]
+  (-> attr
+      (assoc :extends segments :post-class {:piled true})
+      (semui/extelem kids)))
+
+;;Segment
+
+(defelem segment [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class {:ui true} :post-class {:segment true})
+      (semui/extelem kids)))
+
+(defelem secondary-segment [attr kids]
+    (-> attr
+      (assoc :extends segment :post-class {:secondary true})
+      (semui/extelem kids)))
+
+(defelem tertiary-segment [attr kids]
+    (-> attr
+      (assoc :extends segment :post-class {:tertiary true})
+      (semui/extelem kids)))
+
+(defelem circular-segment [attr kids]
+    (-> attr
+      (assoc :extends segment :post-class {:circular true})
+      (semui/extelem kids)))
+
+(defelem raised-segment [attr kids]
+    (-> attr
+      (assoc :extends segment :post-class {:raised true})
+      (semui/extelem kids)))
+
+(defelem compact-segment [attr kids]
+    (-> attr
+      (assoc :extends segment :post-class {:compact true})
+      (semui/extelem kids)))
+
+(defelem stacked-segment [attr kids]
+    (-> attr
+      (assoc :extends segment :post-class {:stacked true})
+      (semui/extelem kids)))
+
+(defelem piled-segment [attr kids]
+    (-> attr
+      (assoc :extends segment :post-class {:piled true})
+      (semui/extelem kids)))
+
+(defelem vertical-segment [attr kids]
+    (-> attr
+      (assoc :extends segment :post-class {:vertical true})
+      (semui/extelem kids)))
+
+(defelem basic-segment [attr kids]
+    (-> attr
+      (assoc :extends segment :post-class {:basic true})
+      (semui/extelem kids)))
+
+;;Padded Segment
+(defelem padded-segment [attr kids]
+    (-> attr
+      (assoc :extends segment :post-class {:padded true})
+      (semui/extelem kids))
+  (semui/extelem :extends segment
+                 :post-class {:padded true}))
+
+(defelem very-padded-segment [attr kids]
+    (-> attr
+      (assoc :extends padded-segment :post-class {:very true})
+      (semui/extelem kids)))
+
+;;Attached Segments
+(defelem attached-segment [attr kids]
+    (-> attr
+      (assoc :extends segment :post-class {:attached true})
+      (semui/extelem kids)))
+
+(defelem top-attached-segment [attr kids]
+    (-> attr
+      (assoc :extends attached-segment :post-class {:top true})
+      (semui/extelem kids)))
+
+(defelem bottom-attached-segment [attr kids]
+    (-> attr
+      (assoc :extends attached-segment :post-class {:bottom true})
+      (semui/extelem kids)))

@@ -1,0 +1,13 @@
+(ns semantic-ui.modules.modal
+  (:require [semantic-ui.core :as semui]))
+
+(defelem modal [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:modal])
+      (semui/extelem kids)))
+
+(defmethod do! :modal
+  [elem _ v]
+  (if v
+    (.modal (js/jQuery elem) "show")
+    (.modal (js/jQuery elem) "hide")))

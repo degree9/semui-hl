@@ -1,0 +1,93 @@
+(ns semantic-ui.collections.table
+  (:refer-hoplon :exclude [table])
+  (:require [semantic-ui.core :as semui]))
+
+(defelem table [attr kids]
+  (-> attr
+      (assoc :extends hoplon.core/table :pre-class [:ui] :post-class [:table])
+      (semui/extelem kids)))
+
+(defelem single-line-table [attr kids]
+  (-> attr
+      (assoc :extends table :post-class [:single :line])
+      (semui/extelem kids)))
+
+(defelem fixed-table [attr kids]
+  (-> attr
+      (assoc :extends table :post-class [:fixed])
+      (semui/extelem kids)))
+
+(defelem sortable-table [attr kids]
+  (-> attr
+      (assoc :extends table :post-class [:sortable])
+      (semui/extelem kids)))
+
+(defelem padded-table [attr kids]
+  (-> attr
+      (assoc :extends table :post-class [:padded])
+      (semui/extelem kids)))
+
+(defelem very-padded-table [attr kids]
+  (-> attr
+      (assoc :extends padded-table :post-class [:very])
+      (semui/extelem kids)))
+
+(defelem compact-table [attr kids]
+  (-> attr
+      (assoc :extends table :post-class [:compact])
+      (semui/extelem kids)))
+
+(defelem very-compact-table [attr kids]
+  (-> attr
+      (assoc :extends compact-table :post-class [:very])
+      (semui/extelem kids)))
+
+(defelem collapsing-table [attr kids]
+  (-> attr
+      (assoc :extends table :post-class [:collapsing])
+      (semui/extelem kids)))
+
+(defelem unstackable-table [attr kids]
+  (-> attr
+      (assoc :extends table :post-class [:unstackable])
+      (semui/extelem kids)))
+
+(defelem stackable-table [attr kids]
+  (-> attr
+      (assoc :extends table :post-class [:stackable])
+      (semui/extelem kids)))
+
+(defelem tablet-stackable-table [attr kids]
+  (-> attr
+      (assoc :extends stackable-table :post-class [:tablet])
+      (semui/extelem kids)))
+
+(defelem selectable-table [attr kids]
+  (-> attr
+      (assoc :extends table :post-class [:selectable])
+      (semui/extelem kids)))
+
+(defelem celled-table [attr kids]
+  (-> attr
+      (assoc :extends table :post-class [:celled])
+      (semui/extelem kids)))
+
+(defelem striped-table [attr kids]
+  (-> attr
+      (assoc :extends table :post-class [:striped])
+      (semui/extelem kids)))
+
+(defelem basic-table [attr kids]
+  (-> attr
+      (assoc :extends table :post-class [:basic])
+      (semui/extelem kids)))
+
+(defelem very-basic-table [attr kids]
+  (-> attr
+      (assoc :extends basic-table :post-class [:very])
+      (semui/extelem kids)))
+
+
+
+
+

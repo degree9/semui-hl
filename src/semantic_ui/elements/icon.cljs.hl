@@ -1,0 +1,7 @@
+(ns semantic-ui.elements.icon
+  (:require [semantic-ui.core :as semui]))
+
+(defelem icon [attr kids]
+  (-> attr
+      (assoc :extends i :post-class [:icon])
+      (semui/extelem kids)))

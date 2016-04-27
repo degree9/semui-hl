@@ -1,0 +1,17 @@
+(ns semantic-ui.modules.accordion
+  (:require [semantic-ui.core :as semui]))
+
+(defelem accordion [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:accordion])
+      (semui/extelem kids)))
+
+(defelem styled-accordion [attr kids]
+  (-> attr
+      (assoc :extends accordion :post-class [:styled])
+      (semui/extelem kids)))
+
+(defmethod do! :accordion
+  [elem _ v]
+  (when v
+    (.accordion (js/jQuery elem))))

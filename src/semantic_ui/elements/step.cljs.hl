@@ -1,0 +1,38 @@
+(ns semantic-ui.elements.step
+  (:require [semantic-ui.core :as semui]))
+
+(defelem steps [attr kids]
+  (-> attr
+      (assoc
+        :extends semui/countelem
+        :count-attr  :count-steps
+        :count-steps true
+        :pre-class  {:ui true}
+        :post-class {:steps true})
+      (semui/extelem kids)))
+
+(defelem ordered-steps [attr kids]
+  (-> attr
+      (assoc
+        :extends steps
+        :post-class {:ordered true})
+      (semui/extelem kids)))
+
+(defelem step [attr kids]
+  (let [icon  (:icon attr)
+        title (:title attr)
+        attr  (-> attr
+                  (dissoc :icon :title :description)
+                  (assoc :extends div :post-class {:step true}))
+        kids  [(i :class icon)
+               (div :class [:content]
+                    (div :class [:title] title)
+                    (div :class [:description] kids))]]
+    (semui/extelem attr kids)))
+
+(defelem link-step [attr kids]
+  (-> attr
+      (assoc
+        :extends step
+        :post-class {:link true})
+    (semui/extelem attr kids)))

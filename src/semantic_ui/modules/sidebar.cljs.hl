@@ -1,0 +1,17 @@
+(ns semantic-ui.modules.sidebar
+  (:require [semantic-ui.core :as semui]))
+
+(defelem sidebar [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:sidebar])
+      (semui/extelem kids)))
+
+(defelem pusher [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:pusher])
+      (semui/extelem kids)))
+
+(defmethod do! :sidebar
+  [elem _ v]
+  (when v
+    (.sidebar (js/jQuery elem) (clj->js v))))

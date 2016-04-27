@@ -1,0 +1,45 @@
+(ns semantic-ui.views.feed
+  (:require [semantic-ui.core :as semui]))
+
+(defelem feed [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:feed])
+      (semui/extelem kids)))
+
+(defelem event [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:event])
+      (semui/extelem kids)))
+
+(defelem label [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:label])
+      (semui/extelem kids)))
+
+(defelem content [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:content])
+      (semui/extelem kids)))
+
+(defelem summary [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:summary])
+      (semui/extelem kids)))
+
+(defelem date [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:date])
+      (semui/extelem kids)))
+
+(defelem extra-images [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:extra :images])
+      (semui/extelem kids)))
+
+(defelem extra-text [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:extra :text])
+      (semui/extelem kids)))
+
+
+

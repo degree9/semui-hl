@@ -1,0 +1,43 @@
+(ns semantic-ui.views.advertisement
+  (:require [semantic-ui.core :as semui]))
+
+(defelem ad [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:ad])
+      (semui/extelem kids)))
+
+(defelem mobile [attr kids]
+  (-> attr
+      (assoc :extends ad :pre-class [:mobile])
+      (semui/extelem kids)))
+
+(defelem rectangle [attr kids]
+  (-> attr
+      (assoc :extends ad :post-class [:rectangle])
+      (semui/extelem kids)))
+
+(defelem banner [attr kids]
+  (-> attr
+      (assoc :extends ad :post-class [:banner])
+      (semui/extelem kids)))
+
+(defelem skyscraper [attr kids]
+  (-> attr
+      (assoc :extends ad :post-class [:skyscraper])
+      (semui/extelem kids)))
+
+(defelem leaderboard [attr kids]
+  (-> attr
+      (assoc :extends ad :post-class [:leaderboard])
+      (semui/extelem kids)))
+
+(defelem panorama [attr kids]
+  (-> attr
+      (assoc :extends ad :post-class [:panorama])
+      (semui/extelem kids)))
+
+(defelem netboard [attr kids]
+  (-> attr
+      (assoc :extends ad :post-class [:netboard])
+      (semui/extelem kids)))
+

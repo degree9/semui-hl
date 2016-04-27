@@ -1,0 +1,78 @@
+(ns semantic-ui.elements.label
+  (:require [semantic-ui.core :as semui]))
+
+(defelem label [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:label])
+      (semui/extelem kids)))
+
+(defelem labels [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:labels])
+      (semui/extelem kids)))
+
+(defelem image-label [attr kids]
+  (-> attr
+      (assoc :extends label :post-class [:image])
+      (semui/extelem kids)))
+
+(defelem pointing-label [attr kids]
+  (-> attr
+      (assoc :extends label :post-class [:pointing])
+      (semui/extelem kids)))
+
+(defelem left-pointing-label [attr kids]
+  (-> attr
+      (assoc :extends pointing-label :post-class [:left])
+      (semui/extelem kids)))
+
+(defelem right-pointing-label [attr kids]
+  (-> attr
+      (assoc :extends pointing-label :post-class [:right])
+      (semui/extelem kids)))
+
+(defelem left-corner-label [attr kids]
+  (-> attr
+      (assoc :extends label :post-class [:left :corner])
+      (semui/extelem kids)))
+
+(defelem right-corner-label [attr kids]
+  (-> attr
+      (assoc :extends label :post-class [:right :corner])
+      (semui/extelem kids)))
+
+(defelem tag-label [attr kids]
+  (-> attr
+      (assoc :extends label :post-class [:tag])
+      (semui/extelem kids)))
+
+(defelem ribbon-label [attr kids]
+  (-> attr
+      (assoc :extends label :post-class [:ribbon])
+      (semui/extelem kids)))
+
+(defelem right-ribbon-label [attr kids]
+  (-> attr
+      (assoc :extends ribbon-label :post-class [:right])
+      (semui/extelem kids)))
+
+(defelem basic-label [attr kids]
+  (-> attr
+      (assoc :extends label :post-class [:basic])
+      (semui/extelem kids)))
+
+(defelem attached-label [attr kids]
+  (-> attr
+      (assoc :extends label :post-class [:attached])
+      (semui/extelem kids)))
+
+(defelem circular-label [attr kids]
+  (-> attr
+      (assoc :extends label :post-class [:circular])
+      (semui/extelem kids)))
+
+(defelem horizontal-label [attr kids]
+  (-> attr
+      (assoc :extends label :post-class [:horizontal])
+      (semui/extelem kids)))
+

@@ -1,0 +1,74 @@
+(ns semantic-ui.views.card
+  (:require [semantic-ui.core :as semui]))
+
+;;Card
+(defelem card [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class {:ui true} :post-class {:card true})
+      (semui/extelem kids)))
+
+(defelem a-card [attr kids]
+  (-> attr
+      (assoc :extends a :pre-class {:ui true} :post-class {:card true})
+      (semui/extelem kids)))
+
+(defelem image [attr kids]
+  (-> attr
+      (assoc :extends div :post-class {:image true})
+      (semui/extelem kids)))
+
+(defelem content [attr kids]
+  (-> attr
+      (assoc :extends div :post-class {:content true})
+      (semui/extelem kids)))
+
+(defelem content-header [attr kids]
+  (-> attr
+      (assoc :extends div :post-class {:header true})
+      (semui/extelem kids)))
+
+(defelem content-meta [attr kids]
+  (-> attr
+      (assoc :extends div :post-class {:meta true})
+      (semui/extelem kids)))
+
+(defelem content-description [attr kids]
+  (-> attr
+      (assoc :extends div :post-class {:description true})
+      (semui/extelem kids)))
+
+(defelem extra-content [attr kids]
+  (-> attr
+      (assoc :extends div :post-class {:extra true})
+      (semui/extelem kids)))
+
+(defelem link-card [attr kids]
+  (-> attr
+      (assoc :extends card :post-class {:link true})
+      (semui/extelem kids)))
+
+(defelem fluid-card [attr kids]
+  (-> attr
+      (assoc :extends card :post-class {:fluid true})
+      (semui/extelem kids)))
+
+;;Cards
+(defelem cards [attr kids]
+  (-> attr
+      (assoc :extends semui/countelem :pre-class {:ui true} :post-class {:cards true})
+      (semui/extelem kids)))
+
+(defelem link-cards [attr kids]
+  (-> attr
+      (assoc :extends cards :post-class {:link true})
+      (semui/extelem kids)))
+
+(defelem stackable-cards [attr kids]
+  (-> attr
+      (assoc :extends cards :post-class {:stackable true})
+      (semui/extelem kids)))
+
+(defelem doubling-cards [attr kids]
+  (-> attr
+      (assoc :extends cards :post-class {:doubling true})
+      (semui/extelem kids)))

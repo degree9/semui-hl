@@ -1,0 +1,12 @@
+(ns semantic-ui.modules.checkbox
+  (:require [semantic-ui.core :as semui]))
+
+(defelem checkbox [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:checkbox])
+      (semui/extelem kids)))
+
+(defmethod do! :checkbox
+  [elem _ v]
+  (when v
+    (.checkbox (js/jQuery elem) (clj->js v))))

@@ -1,0 +1,39 @@
+(ns semantic-ui.collections.form
+  (:refer-hoplon :exclude [form])
+  (:require [clojure.string :as s]
+            [semantic-ui.core :as semui]))
+
+(defelem form [attr kids]
+  (-> attr
+      (assoc :extends hoplon.core/form :pre-class [:ui] :post-class [:form])
+      (semui/extelem kids)))
+
+(defelem field [attr kids]
+  (-> attr
+      (assoc :extends semui/countelem :count-attr :width :count-class "wide field" :post-class [:field])
+      (semui/extelem kids)))
+
+(defelem inline-field [attr kids]
+  (-> attr
+      (assoc :extends field :post-class [:inline])
+      (semui/extelem kids)))
+
+(defelem required-field [attr kids]
+  (-> attr
+      (assoc :extends field :pre-class [:required])
+      (semui/extelem kids)))
+
+(defelem fields [attr kids]
+  (-> attr
+      (assoc :extends semui/countelem :count-attr :count :post-class [:fields])
+      (semui/extelem kids)))
+
+(defelem grouped-fields [attr kids]
+  (-> attr
+      (assoc :extends fields :post-class [:grouped])
+      (semui/extelem kids)))
+
+(defelem inline-fields [attr kids]
+  (-> attr
+      (assoc :extends fields :post-class [:inline])
+      (semui/extelem kids)))

@@ -1,0 +1,27 @@
+(ns semantic-ui.views.statistic
+  (:require [semantic-ui.core :as semui]))
+
+(defelem statistic [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:statistic])
+      (semui/extelem kids)))
+
+(defelem horizontal-statistic [attr kids]
+  (-> attr
+      (assoc :extends statistic :post-class [:horizontal])
+      (semui/extelem kids)))
+
+(defelem statistics [attr kids]
+  (-> attr
+      (assoc :extends semui/countelem :count-attr :count :pre-class [:ui] :post-class [:statistics])
+      (semui/extelem kids)))
+
+(defelem value [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:value])
+      (semui/extelem kids)))
+
+(defelem label [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:label])
+      (semui/extelem kids)))

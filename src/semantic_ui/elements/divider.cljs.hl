@@ -1,0 +1,17 @@
+(ns semantic-ui.elements.divider
+  (:require [semantic-ui.core :as semui]))
+
+(defelem divider [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class {:ui true} :post-class {:divider true})
+      (semui/extelem kids)))
+
+(defelem horizontal-divider [attr kids]
+  (-> attr
+      (assoc :extends divider :post-class {:horizontal true})
+      (semui/extelem kids)))
+
+(defelem vertical-divider [attr kids]
+  (-> attr
+      (assoc :extends divider :post-class {:vertical true})
+      (semui/extelem kids)))

@@ -1,0 +1,7 @@
+(ns semantic-ui.elements.flag
+  (:require [semantic-ui.core :as semui]))
+
+(defelem flag [attr kids]
+  (-> attr
+      (assoc :extends i :post-class [:flag])
+      (semui/extelem kids)))

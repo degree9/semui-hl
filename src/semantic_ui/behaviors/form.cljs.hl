@@ -1,0 +1,7 @@
+(ns semantic-ui.behaviors.form
+  (:require [semantic-ui.core :as semui]))
+
+(defmethod do! :form
+  [elem _ v]
+  (when v
+    (.form (js/jQuery elem) (clj->js v))))

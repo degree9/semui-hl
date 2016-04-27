@@ -1,0 +1,12 @@
+(ns semantic-ui.modules.nag
+  (:require [semantic-ui.core :as semui]))
+
+(defelem nag [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:nag])
+      (semui/extelem kids)))
+
+(defmethod do! :nag
+  [elem _ v]
+  (when v
+    (.nag (js/jQuery elem) (clj->js v))))

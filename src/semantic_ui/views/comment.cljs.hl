@@ -1,0 +1,57 @@
+(ns semantic-ui.views.comment
+  (:require [semantic-ui.core :as semui]))
+
+(defelem comments [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:comments])
+      (semui/extelem kids)))
+
+(defelem comment [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:comment])
+      (semui/extelem kids)))
+
+(defelem avatar [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:avatar])
+      (semui/extelem kids)))
+
+(defelem content [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:content])
+      (semui/extelem kids)))
+
+(defelem author [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:author])
+      (semui/extelem kids)))
+
+(defelem meta [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:metadata])
+      (semui/extelem kids)))
+
+(defelem text [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:text])
+      (semui/extelem kids)))
+
+(defelem actions [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:actions])
+      (semui/extelem kids)))
+
+(defelem reply-form [attr kids]
+  (-> attr
+      (assoc :extends form :pre-class [:ui] :post-class [:reply :form])
+      (semui/extelem kids)))
+
+(defelem threaded-comments [attr kids]
+  (-> attr
+      (assoc :extends comments :post-class [:threaded])
+      (semui/extelem kids)))
+
+(defelem minimal-comments [attr kids]
+  (-> attr
+      (assoc :extends comments :post-class [:minimal])
+      (semui/extelem kids)))

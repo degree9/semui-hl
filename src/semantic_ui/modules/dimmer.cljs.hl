@@ -1,0 +1,18 @@
+(ns semantic-ui.modules.dimmer
+  (:require [semantic-ui.core :as semui]))
+
+(defelem dimmer [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:dimmer])
+      (semui/extelem kids)))
+
+(defelem page-dimmer [attr kids]
+  (-> attr
+      (assoc :extends dimmer :post-class [:page])
+      (semui/extelem kids)))
+
+(defmethod do! :dimmer
+  [elem _ v]
+  (cond (map? v) (.dimmer (js/jQuery elem) (clj->js v))
+        (false? v) (.dimmer (js/jQuery elem) "hide")
+        :default (.dimmer (js/jQuery elem) "toggle")))

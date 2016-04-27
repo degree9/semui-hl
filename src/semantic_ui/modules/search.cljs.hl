@@ -1,0 +1,12 @@
+(ns semantic-ui.modules.search
+  (:require [semantic-ui.core :as semui]))
+
+(defelem search [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:search])
+      (semui/extelem kids)))
+
+(defmethod do! :search
+  [elem _ v]
+  (when v
+    (.search (js/jQuery elem) (clj->js v))))

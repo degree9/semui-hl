@@ -1,0 +1,12 @@
+(ns semantic-ui.modules.rating
+  (:require [semantic-ui.core :as semui]))
+
+(defelem rating [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:rating])
+      (semui/extelem kids)))
+
+(defmethod do! :rating
+  [elem _ v]
+  (when v
+    (.rating (js/jQuery elem) (clj->js v))))

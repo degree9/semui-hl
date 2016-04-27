@@ -1,0 +1,12 @@
+(ns semantic-ui.modules.popup
+  (:require [semantic-ui.core :as semui]))
+
+(defelem popup [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:popup])
+      (semui/extelem kids)))
+
+(defmethod do! :popup
+  [elem _ v]
+  (when v
+    (.popup (js/jQuery elem) (clj->js v))))

@@ -1,0 +1,43 @@
+(ns semantic-ui.collections.breadcrumb
+  (:require [semantic-ui.core :as semui]))
+
+(defelem breadcrumb [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:breadcrumb])
+      (semui/extelem kids)))
+
+(defelem section [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:section])
+      (semui/extelem kids)))
+
+(defelem link-section [attr kids]
+  (-> attr
+      (assoc :extends a :post-class [:section])
+      (semui/extelem kids)))
+
+(defelem divider [attr _]
+  (-> attr
+      (assoc :extends div :post-class [:divider])
+      (semui/extelem "/")))
+
+(defelem icon-divider [attr kids]
+  (-> attr
+      (assoc :extends i :post-class [:icon :divider])
+      (semui/extelem kids)))
+
+(defelem angle-divider [attr kids]
+  (-> attr
+      (assoc :extends icon-divider :post-class [:right :angle])
+      (semui/extelem kids)))
+
+(defelem chevron-divider [attr kids]
+  (-> attr
+      (assoc :extends icon-divider :post-class [:right :chevron])
+      (semui/extelem kids)))
+
+(defelem arrow-divider [attr kids]
+  (-> attr
+      (assoc :extends icon-divider :post-class [:right :arrow])
+      (semui/extelem kids)))
+

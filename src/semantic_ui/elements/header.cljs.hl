@@ -1,0 +1,128 @@
+(ns semantic-ui.elements.flag
+  (:refer-hoplon :exclude [h1 h2 h3 h4 h5])
+  (:require [semantic-ui.core :as semui]))
+
+(defelem h1 [attr kids]
+  (-> attr
+      (assoc :extends hoplon.core/h1 :pre-class [:ui] :post-class [:header])
+      (semui/extelem kids)))
+
+(defelem h2 [attr kids]
+  (-> attr
+      (assoc :extends hoplon.core/h2 :pre-class [:ui] :post-class [:header])
+      (semui/extelem kids)))
+
+(defelem h3 [attr kids]
+  (-> attr
+      (assoc :extends hoplon.core/h3 :pre-class [:ui] :post-class [:header])
+      (semui/extelem kids)))
+
+(defelem h4 [attr kids]
+  (-> attr
+      (assoc :extends hoplon.core/h4 :pre-class [:ui] :post-class [:header])
+      (semui/extelem kids)))
+
+(defelem h5 [attr kids]
+  (-> attr
+      (assoc :extends hoplon.core/h5 :pre-class [:ui] :post-class [:header])
+      (semui/extelem kids)))
+
+(defelem sub-h1 [attr kids]
+  (-> attr
+      (assoc :extends h1 :post-class [:sub])
+      (semui/extelem kids)))
+
+(defelem sub-h2 [attr kids]
+  (-> attr
+      (assoc :extends h2 :post-class [:sub])
+      (semui/extelem kids)))
+
+(defelem sub-h3 [attr kids]
+  (-> attr
+      (assoc :extends h3 :post-class [:sub])
+      (semui/extelem kids)))
+
+(defelem sub-h4 [attr kids]
+  (-> attr
+      (assoc :extends h4 :post-class [:sub])
+      (semui/extelem kids)))
+
+(defelem sub-h5 [attr kids]
+  (-> attr
+      (assoc :extends h5 :post-class [:sub])
+      (semui/extelem kids)))
+
+(defelem dividing-h1 [attr kids]
+  (-> attr
+      (assoc :extends h1 :post-class [:dividing])
+      (semui/extelem kids)))
+
+(defelem dividing-h2 [attr kids]
+  (-> attr
+      (assoc :extends h2 :post-class [:dividing])
+      (semui/extelem kids)))
+
+(defelem dividing-h3 [attr kids]
+  (-> attr
+      (assoc :extends h3 :post-class [:dividing])
+      (semui/extelem kids)))
+
+(defelem dividing-h4 [attr kids]
+  (-> attr
+      (assoc :extends h4 :post-class [:dividing])
+      (semui/extelem kids)))
+
+(defelem dividing-h5 [attr kids]
+  (-> attr
+      (assoc :extends h5 :post-class [:dividing])
+      (semui/extelem kids)))
+
+(defelem block-h1 [attr kids]
+  (-> attr
+      (assoc :extends h1 :post-class [:block])
+      (semui/extelem kids)))
+
+(defelem block-h2 [attr kids]
+  (-> attr
+      (assoc :extends h2 :post-class [:block])
+      (semui/extelem kids)))
+
+(defelem block-h3 [attr kids]
+  (-> attr
+      (assoc :extends h3 :post-class [:block])
+      (semui/extelem kids)))
+
+(defelem block-h4 [attr kids]
+  (-> attr
+      (assoc :extends h4 :post-class [:block])
+      (semui/extelem kids)))
+
+(defelem block-h5 [attr kids]
+  (-> attr
+      (assoc :extends h5 :post-class [:block])
+      (semui/extelem kids)))
+
+(defelem attached-h1 [attr kids]
+  (-> attr
+      (assoc :extends h1 :post-class [:attached])
+      (semui/extelem kids)))
+
+(defelem attached-h2 [attr kids]
+  (-> attr
+      (assoc :extends h2 :post-class [:attached])
+      (semui/extelem kids)))
+
+(defelem attached-h3 [attr kids]
+  (-> attr
+      (assoc :extends h3 :post-class [:attached])
+      (semui/extelem kids)))
+
+(defelem attached-h4 [attr kids]
+  (-> attr
+      (assoc :extends h4 :post-class [:attached])
+      (semui/extelem kids)))
+
+(defelem attached-h5 [attr kids]
+  (-> attr
+      (assoc :extends h5 :post-class [:attached])
+      (semui/extelem kids)))

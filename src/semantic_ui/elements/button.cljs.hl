@@ -1,0 +1,73 @@
+(ns semantic-ui.elements.button
+  (:refer-hoplon :exclude [button])
+  (:require [semantic-ui.core :as semui]))
+
+(defelem buttons [attr kids]
+  (-> attr
+      (assoc :extends semui/countelem :count-attr :count :pre-class [:ui] :post-class [:buttons])
+      (semui/extelem kids)))
+
+(defelem icon-buttons [attr kids]
+  (-> attr
+      (assoc :extends buttons :post-class [:icon])
+      (semui/extelem kids)))
+
+(defelem button [attr kids]
+  (-> attr
+      (assoc :extends hoplon.core/button :pre-class [:ui] :post-class [:button])
+      (semui/extelem kids)))
+
+(defelem primary-button [attr kids]
+  (-> attr
+      (assoc :extends button :post-class [:primary])
+      (semui/extelem kids)))
+
+(defelem secondary-button [attr kids]
+  (-> attr
+      (assoc :extends button :post-class [:secondary])
+      (semui/extelem kids)))
+
+(defelem toggle-button [attr kids]
+  (-> attr
+      (assoc :extends button :post-class [:toggle])
+      (semui/extelem kids)))
+
+(defelem fluid-button [attr kids]
+  (-> attr
+      (assoc :extends button :post-class [:fluid])
+      (semui/extelem kids)))
+
+(defelem circular-button [attr kids]
+  (-> attr
+      (assoc :extends button :post-class [:circular])
+      (semui/extelem kids)))
+
+(defelem animated-button [attr kids]
+  (-> attr
+      (assoc :extends button :post-class [:animated])
+      (semui/extelem kids)))
+
+(defelem labeled-button [attr kids]
+  (-> attr
+      (assoc :extends button :post-class [:labeled])
+      (semui/extelem kids)))
+
+(defelem icon-button [attr kids]
+  (-> attr
+      (assoc :extends button :post-class [:icon])
+      (semui/extelem kids)))
+
+(defelem labeled-icon-button [attr kids]
+  (-> attr
+      (assoc :extends icon-button :post-class [:labeled])
+      (semui/extelem kids)))
+
+(defelem basic-button [attr kids]
+  (-> attr
+      (assoc :extends button :post-class [:basic])
+      (semui/extelem kids)))
+
+(defelem inverted-button [attr kids]
+  (-> attr
+      (assoc :extends button :post-class [:inverted])
+      (semui/extelem kids)))

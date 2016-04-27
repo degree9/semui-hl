@@ -1,0 +1,12 @@
+(ns semantic-ui.modules.shape
+  (:require [semantic-ui.core :as semui]))
+
+(defelem shape [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:shape])
+      (semui/extelem kids)))
+
+(defmethod do! :shape
+  [elem _ v]
+  (when v
+    (.shape (js/jQuery elem) v)))

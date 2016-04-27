@@ -1,0 +1,12 @@
+(ns semantic-ui.modules.dropdown
+  (:require [semantic-ui.core :as semui]))
+
+(defelem dropdown [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:dropdown])
+      (semui/extelem kids)))
+
+(defmethod do! :dropdown
+  [elem _ v]
+  (when v
+    (.dropdown (js/jQuery elem) (clj->js v))))

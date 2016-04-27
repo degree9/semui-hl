@@ -1,0 +1,35 @@
+(ns semantic-ui.elements.reveal
+  (:require [semantic-ui.core :as semui]))
+
+(defelem reveal [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:reveal])
+      (semui/extelem kids)))
+
+(defelem instant-reveal [attr kids]
+  (-> attr
+      (assoc :extends reveal :pre-class [:instant])
+      (semui/extelem kids)))
+
+(defelem move-reveal [attr kids]
+  (-> attr
+      (assoc :extends reveal :post-class [:move])
+      (semui/extelem kids)))
+
+(defelem fade-reveal [attr kids]
+  (-> attr
+      (assoc :extends reveal :post-class [:fade])
+      (semui/extelem kids)))
+
+(defelem hidden-content [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:hidden :content])
+      (semui/extelem kids)))
+
+(defelem visible-content [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:visible :content])
+      (semui/extelem kids)))
+
+
+

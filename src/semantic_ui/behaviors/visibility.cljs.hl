@@ -1,0 +1,7 @@
+(ns semantic-ui.behaviors.visibility
+  (:require [semantic-ui.core :as semui]))
+
+(defmethod do! :visibility
+  [elem _ v]
+  (when v
+    (.visibility (js/jQuery elem) (clj->js v))))

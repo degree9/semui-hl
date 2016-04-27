@@ -1,0 +1,49 @@
+(ns semantic-ui.core
+  (:require [clojure.string :as s]))
+
+(def countable {:1 "one" :2 "two" :3 "three" :4 "four" :5 "five" :6 "six" :7 "seven" :8 "eight" :9 "nine" :10 "ten"
+                :11 "eleven" :12 "twelve" :13 "thirteen" :14 "fourteen" :15 "fifteen" :16 "sixteen"})
+
+(defn count->word [x]
+  (let [c (-> x str)]
+    (when (< 0 c) (countable (keyword c)))))
+
+(defn word->class [x]
+  (when x {(keyword x) true}))
+
+;;thanks to hoplon.core for this
+(defn normalize-class [kvs]
+  (let [->map #(zipmap % (repeat true))]
+    (if (map? kvs)
+      kvs
+      (->map (if (string? kvs) (.split kvs #"\s+") (seq kvs))))))
+
+(def classc= #(cell= (normalize-class %)))
+
+(defelem extelem [attr kids]
+  (let [base     (:extends attr)
+        oldclass (classc= (:class attr))
+        pre      (classc= (:pre-class attr))
+        post     (classc= (:post-class attr))
+        newclass (cell= (merge pre oldclass post))
+        attr     (-> attr
+                     (dissoc :extends :pre-class :post-class)
+                     (assoc :class newclass))]
+    (base attr kids)))
+
+(defelem countelem [attr kids]
+  (let [count-attr  (:count-attr attr)
+        count-class (:count-class attr)
+        countval    (when count-attr (cell= (count-attr attr)))
+        attrc       (cell= (cond (number? countval) (-> countval
+                                                        count->word
+                                                        word->class)
+                                 (= true countval)  (-> kids
+                                                        count
+                                                        count->word
+                                                        word->class)))
+        classc      (cell= (when countval (word->class count-class)))
+        attr        (-> attr
+                        (dissoc :count-attr :count-class)
+                        (assoc :extends div :pre-class (cell= (merge {:ui true} attrc classc))))]
+    (extelem attr kids)))

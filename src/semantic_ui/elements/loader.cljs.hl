@@ -1,0 +1,12 @@
+(ns semantic-ui.elements.loader
+  (:require [semantic-ui.core :as semui]))
+
+(defelem loader [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:loader])
+      (semui/extelem kids)))
+
+(defelem text-loader [attr kids]
+  (-> attr
+      (assoc :extends loader :post-class [:text])
+      (semui/extelem kids)))

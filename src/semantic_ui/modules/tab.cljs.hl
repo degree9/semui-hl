@@ -1,0 +1,12 @@
+(ns semantic-ui.modules.tab
+  (:require [semantic-ui.core :as semui]))
+
+(defelem tab [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:tab])
+      (semui/extelem kids)))
+
+(defmethod do! :tab
+  [elem _ v]
+  (when v
+    (.tab (js/jQuery elem) (clj->js v))))

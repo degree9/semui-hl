@@ -1,0 +1,52 @@
+(ns semantic-ui.collections.message
+  (:require [semantic-ui.core :as semui]))
+
+(defelem message [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:message])
+      (semui/extelem kids)))
+
+(defelem icon-message [attr kids]
+  (-> attr
+      (assoc :extends message :post-class [:icon])
+      (semui/extelem kids)))
+
+(defelem floating-message [attr kids]
+  (-> attr
+      (assoc :extends message :post-class [:floating])
+      (semui/extelem kids)))
+
+(defelem compact-message [attr kids]
+  (-> attr
+      (assoc :extends message :post-class [:compact])
+      (semui/extelem kids)))
+
+(defelem attached-message [attr kids]
+  (-> attr
+      (assoc :extends message :post-class [:attached])
+      (semui/extelem kids)))
+
+(defelem bottom-attached-message [attr kids]
+  (-> attr
+      (assoc :extends attached-message :post-class [:bottom])
+      (semui/extelem kids)))
+
+(defelem info-message [attr kids]
+  (-> attr
+      (assoc :extends message :post-class [:info])
+      (semui/extelem kids)))
+
+(defelem warning-message [attr kids]
+  (-> attr
+      (assoc :extends message :post-class [:warning])
+      (semui/extelem kids)))
+
+(defelem error-message [attr kids]
+  (-> attr
+      (assoc :extends message :post-class [:error])
+      (semui/extelem kids)))
+
+(defelem success-message [attr kids]
+  (-> attr
+      (assoc :extends message :post-class [:success])
+      (semui/extelem kids)))

@@ -1,0 +1,50 @@
+(ns semantic-ui.views.item
+  (:require [semantic-ui.core :as semui]))
+
+(defelem items [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class [:ui] :post-class [:items])
+      (semui/extelem kids)))
+
+(defelem divided-items [attr kids]
+  (-> attr
+      (assoc :extends items :post-class [:divided])
+      (semui/extelem kids)))
+
+(defelem relaxed-items [attr kids]
+  (-> attr
+      (assoc :extends items :post-class [:relaxed])
+      (semui/extelem kids)))
+
+(defelem item [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:item])
+      (semui/extelem kids)))
+
+(defelem image [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:image])
+      (semui/extelem kids)))
+
+(defelem content [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:content])
+      (semui/extelem kids)))
+
+(defelem meta [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:meta])
+      (semui/extelem kids)))
+
+(defelem description [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:description])
+      (semui/extelem kids)))
+
+(defelem extra [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:extra])
+      (semui/extelem kids)))
+
+
+

@@ -1,0 +1,17 @@
+(ns semantic-ui.elements.container
+  (:require [semantic-ui.core :as semui]))
+
+(defelem container [attr kids]
+  (-> attr
+      (assoc :extends div :pre-class {:ui true} :post-class {:container true})
+      (semui/extelem kids)))
+
+(defelem text-container [attr kids]
+  (-> attr
+      (assoc :extends container :post-class {:text true})
+      (semui/extelem kids)))
+
+(defelem grid-container [attr kids]
+  (-> attr
+      (assoc :extends container :post-class {:grid true})
+      (semui/extelem kids)))
