@@ -4,71 +4,71 @@
 ;;Card
 (defelem card [attr kids]
   (-> attr
-      (assoc :extends div :pre-class {:ui true} :post-class {:card true})
+      (assoc :extends div :pre-class [:ui] :post-class [:card])
       (semui/extelem kids)))
 
 (defelem a-card [attr kids]
   (-> attr
-      (assoc :extends a :pre-class {:ui true} :post-class {:card true})
+      (assoc :extends a :pre-class [:ui] :post-class [:card])
       (semui/extelem kids)))
 
 (defelem image [attr kids]
   (-> attr
-      (assoc :extends div :post-class {:image true})
+      (assoc :extends div :post-class [:image])
       (semui/extelem kids)))
 
 (defelem content [attr kids]
   (-> attr
-      (assoc :extends div :post-class {:content true})
+      (assoc :extends div :post-class [:content])
       (semui/extelem kids)))
 
 (defelem content-header [attr kids]
   (-> attr
-      (assoc :extends div :post-class {:header true})
+      (assoc :extends div :post-class [:header])
       (semui/extelem kids)))
 
 (defelem content-meta [attr kids]
   (-> attr
-      (assoc :extends div :post-class {:meta true})
+      (assoc :extends div :post-class [:meta])
       (semui/extelem kids)))
 
 (defelem content-description [attr kids]
   (-> attr
-      (assoc :extends div :post-class {:description true})
+      (assoc :extends div :post-class [:description])
       (semui/extelem kids)))
 
 (defelem extra-content [attr kids]
   (-> attr
-      (assoc :extends div :post-class {:extra true})
+      (assoc :extends div :post-class [:extra])
       (semui/extelem kids)))
 
 (defelem link-card [attr kids]
   (-> attr
-      (assoc :extends card :post-class {:link true})
+      (assoc :extends card :post-class [:link])
       (semui/extelem kids)))
 
 (defelem fluid-card [attr kids]
   (-> attr
-      (assoc :extends card :post-class {:fluid true})
+      (assoc :extends card :post-class [:fluid])
       (semui/extelem kids)))
 
 ;;Cards
 (defelem cards [attr kids]
   (-> attr
-      (assoc :extends semui/countelem :pre-class {:ui true} :post-class {:cards true})
+      (assoc :extends semui/countelem :pre-class [:ui] :post-class [:cards])
       (semui/extelem kids)))
 
 (defelem link-cards [attr kids]
   (-> attr
-      (assoc :extends cards :post-class {:link true})
+      (assoc :extends cards :post-class [:link])
       (semui/extelem kids)))
 
 (defelem stackable-cards [attr kids]
   (-> attr
-      (assoc :extends cards :post-class {:stackable true})
+      (assoc :extends cards :post-class [:stackable])
       (semui/extelem kids)))
 
 (defelem doubling-cards [attr kids]
   (-> attr
-      (assoc :extends cards :post-class {:doubling true})
+      (assoc :extends cards :post-class [:doubling])
       (semui/extelem kids)))

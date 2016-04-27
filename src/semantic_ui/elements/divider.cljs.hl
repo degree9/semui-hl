@@ -3,15 +3,15 @@
 
 (defelem divider [attr kids]
   (-> attr
-      (assoc :extends div :pre-class {:ui true} :post-class {:divider true})
+      (assoc :extends div :pre-class [:ui] :post-class [:divider])
       (semui/extelem kids)))
 
 (defelem horizontal-divider [attr kids]
   (-> attr
-      (assoc :extends divider :post-class {:horizontal true})
+      (assoc :extends divider :post-class [:horizontal])
       (semui/extelem kids)))
 
 (defelem vertical-divider [attr kids]
   (-> attr
-      (assoc :extends divider :post-class {:vertical true})
+      (assoc :extends divider :post-class [:vertical])
       (semui/extelem kids)))

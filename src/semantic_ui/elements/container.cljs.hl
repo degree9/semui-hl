@@ -3,15 +3,15 @@
 
 (defelem container [attr kids]
   (-> attr
-      (assoc :extends div :pre-class {:ui true} :post-class {:container true})
+      (assoc :extends div :pre-class [:ui] :post-class [:container])
       (semui/extelem kids)))
 
 (defelem text-container [attr kids]
   (-> attr
-      (assoc :extends container :post-class {:text true})
+      (assoc :extends container :post-class [:text])
       (semui/extelem kids)))
 
 (defelem grid-container [attr kids]
   (-> attr
-      (assoc :extends container :post-class {:grid true})
+      (assoc :extends container :post-class [:grid])
       (semui/extelem kids)))

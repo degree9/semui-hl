@@ -23,7 +23,7 @@
         title (:title attr)
         attr  (-> attr
                   (dissoc :icon :title :description)
-                  (assoc :extends div :post-class {:step true}))
+                  (assoc :extends div :post-class [:step]))
         kids  [(i :class icon)
                (div :class [:content]
                     (div :class [:title] title)
@@ -32,7 +32,5 @@
 
 (defelem link-step [attr kids]
   (-> attr
-      (assoc
-        :extends step
-        :post-class {:link true})
-    (semui/extelem attr kids)))
+      (assoc :extends step :post-class [:link])
+      (semui/extelem attr kids)))

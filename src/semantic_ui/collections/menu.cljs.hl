@@ -4,27 +4,27 @@
 
 (defelem menu [attr kids]
   (-> attr
-      (assoc :extends semui/countelem :count-attr :count-items :count-items true :pre-class {:ui true} :post-class {:menu true})
+      (assoc :extends semui/countelem :count-attr :count-items :count-items true :pre-class [:ui] :post-class [:menu])
       (semui/extelem kids)))
 
 (defelem tabular-menu [attr kids]
   (-> attr
-      (assoc :extends menu :post-class {:tabular true})
+      (assoc :extends menu :post-class [:tabular])
       (semui/extelem kids)))
 
 (defelem vertical-tabular-menu [attr kids]
   (-> attr
-      (assoc :extends tabular-menu :post-class {:vertical true})
+      (assoc :extends tabular-menu :post-class [:vertical])
       (semui/extelem kids)))
 
 (defelem item [attr kids]
   (-> attr
-      (assoc :extends div :pre-class {:ui true} :post-class {:item true})
+      (assoc :extends div :pre-class [:ui] :post-class [:item])
       (semui/extelem kids)))
 
 (defelem right-item [attr kids]
   (-> attr
-      (assoc :extends item :post-class {:right true})
+      (assoc :extends item :post-class [:right])
       (semui/extelem kids)))
 
 (defelem link-item [attr kids]
