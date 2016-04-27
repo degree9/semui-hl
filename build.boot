@@ -9,13 +9,22 @@
 (require
  '[adzerk.bootlaces :refer :all]
  '[hoplon.boot-hoplon :refer :all]
- '[boot-semver.core :refer :all])
+ '[boot-semver.core :refer :all]
+ '[tolitius.boot-check :as check])
 
 (task-options!
  pom {:project 'degree9/semui-hl
       :description "Semantic UI for Hoplon"
       :url         ""
       :scm {:url ""}})
+
+(deftask tests
+  "Run code tests."
+  []
+  (comp
+    (check/with-kibit)
+    (check/with-yagni)
+    (check/with-eastwood)))
 
 (deftask deploy
   "Build project for deployment to clojars."
@@ -35,5 +44,6 @@
              :minor 'inc
              :patch 'zero
              :pre-release 'snapshot)
+    (tests)
     (hoplon  :manifest true)
     (build-jar)))

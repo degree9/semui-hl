@@ -5,8 +5,8 @@
                 :11 "eleven" :12 "twelve" :13 "thirteen" :14 "fourteen" :15 "fifteen" :16 "sixteen"})
 
 (defn count->word [x]
-  (let [c (-> x str)]
-    (when (< 0 c) (countable (keyword c)))))
+  (let [c (str x)]
+    (when (pos? c) (countable (keyword c)))))
 
 (defn word->class [x]
   (when x {(keyword x) true}))
@@ -38,7 +38,7 @@
         attrc       (cell= (cond (number? countval) (-> countval
                                                         count->word
                                                         word->class)
-                                 (= true countval)  (-> kids
+                                 (true? countval)   (-> kids
                                                         count
                                                         count->word
                                                         word->class)))

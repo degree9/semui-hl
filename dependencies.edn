@@ -4,4 +4,5 @@
  [hoplon/boot-hoplon        "0.1.13"]
  [hoplon/hoplon             "6.0.0-alpha14"]
  [degree9/boot-semver       "1.2.1"]
- [cljsjs/semantic-ui "2.1.8-0"]]
+ [tolitius/boot-check       "0.1.2-SNAPSHOT"]
+ [cljsjs/semantic-ui        "2.1.8-0"]]
