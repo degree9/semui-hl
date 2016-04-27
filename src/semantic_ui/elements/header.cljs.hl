@@ -1,4 +1,4 @@
-(ns semantic-ui.elements.flag
+(ns semantic-ui.elements.header
   (:refer-hoplon :exclude [h1 h2 h3 h4 h5])
   (:require [semantic-ui.core :as semui]))
 

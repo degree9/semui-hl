@@ -4,7 +4,7 @@
 
 (set-env!
  :dependencies   (get-deps)
- :source-paths   #{"src"})
+ :resource-paths #{"src"})
 
 (require
  '[adzerk.bootlaces :refer :all]
@@ -23,8 +23,7 @@
   []
   (comp
     (check/with-kibit)
-    (check/with-yagni)
-    (check/with-eastwood)))
+    (check/with-yagni)))
 
 (deftask deploy
   "Build project for deployment to clojars."
@@ -45,5 +44,5 @@
              :patch 'zero
              :pre-release 'snapshot)
     (tests)
-    (hoplon  :manifest true)
+    (hoplon :manifest true)
     (build-jar)))
