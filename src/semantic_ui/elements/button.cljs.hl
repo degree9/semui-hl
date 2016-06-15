@@ -4,7 +4,7 @@
 
 (defelem buttons [attr kids]
   (-> attr
-      (assoc :extends semui/countelem :count-attr :count :pre-class [:ui] :post-class [:buttons])
+      (assoc :extends semui/countelem :count-attr :buttons :pre-class [:ui] :post-class [:buttons])
       (semui/extelem kids)))
 
 (defelem icon-buttons [attr kids]

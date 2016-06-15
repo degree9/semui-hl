@@ -1,9 +1,15 @@
 (ns semantic-ui.views.item
+  (:refer-clojure :exclude [meta])
   (:require [semantic-ui.core :as semui]))
 
 (defelem items [attr kids]
   (-> attr
       (assoc :extends div :pre-class [:ui] :post-class [:items])
+      (semui/extelem kids)))
+
+(defelem link-items [attr kids]
+  (-> attr
+      (assoc :extends items :post-class [:link])
       (semui/extelem kids)))
 
 (defelem divided-items [attr kids]

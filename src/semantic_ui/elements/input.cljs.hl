@@ -1,4 +1,5 @@
 (ns semantic-ui.elements.input
+  (:refer-hoplon :exclude [input])
   (:require [semantic-ui.core :as semui]))
 
 (defelem input [attr kids]

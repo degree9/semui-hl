@@ -5,24 +5,30 @@
   (-> attr
       (assoc
         :extends semui/countelem
-        :count-attr  :count-steps
-        :count-steps true
-        :pre-class  {:ui true}
-        :post-class {:steps true})
+        :count-attr  :steps
+        :pre-class  [:ui]
+        :post-class [:steps])
       (semui/extelem kids)))
 
 (defelem ordered-steps [attr kids]
   (-> attr
       (assoc
         :extends steps
-        :post-class {:ordered true})
+        :post-class [:ordered])
+      (semui/extelem kids)))
+
+(defelem vertical-steps [attr kids]
+  (-> attr
+      (assoc
+        :extends steps
+        :post-class [:vertical])
       (semui/extelem kids)))
 
 (defelem step [attr kids]
   (let [icon  (:icon attr)
         title (:title attr)
         attr  (-> attr
-                  (dissoc :icon :title :description)
+                  (dissoc :icon :title)
                   (assoc :extends div :post-class [:step]))
         kids  [(i :class icon)
                (div :class [:content]

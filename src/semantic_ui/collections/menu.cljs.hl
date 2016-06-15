@@ -4,7 +4,7 @@
 
 (defelem menu [attr kids]
   (-> attr
-      (assoc :extends semui/countelem :count-attr :count-items :count-items true :pre-class [:ui] :post-class [:menu])
+      (assoc :extends semui/countelem :count-attr :items :pre-class [:ui] :post-class [:menu])
       (semui/extelem kids)))
 
 (defelem tabular-menu [attr kids]

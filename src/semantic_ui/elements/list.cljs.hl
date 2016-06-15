@@ -1,4 +1,6 @@
 (ns semantic-ui.elements.list
+  (:refer-clojure :exclude [list])
+  (:refer-hoplon :exclude [header])
   (:require [semantic-ui.core :as semui]))
 
 (defelem list [attr kids]

@@ -5,4 +5,5 @@
  [hoplon/hoplon             "6.0.0-alpha14" :scope "provided"]
  [degree9/boot-semver       "1.2.1" :scope "test"]
  [tolitius/boot-check       "0.1.1" :scope "test"]
- [cljsjs/semantic-ui        "2.1.8-0"]]
+ [cljsjs/semantic-ui        "2.1.8-0"]
+ [frankiesardo/linked "1.2.6"]]

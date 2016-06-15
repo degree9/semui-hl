@@ -9,10 +9,10 @@
 
 (defelem column [attr kids]
   (-> attr
-      (assoc :extends semui/countelem :count-attr :width :count-class "wide column" :post-class [:column])
+      (assoc :extends semui/countelem :count-attr :width :count-class "wide" :post-class [:column])
       (semui/extelem kids)))
 
 (defelem row [attr kids]
   (-> attr
-      (assoc :extends semui/countelem :count-attr :width :count-class "column" :post-class [:row])
+      (assoc :extends semui/countelem :count-attr :column :count-class "column" :post-class [:row])
       (semui/extelem kids)))

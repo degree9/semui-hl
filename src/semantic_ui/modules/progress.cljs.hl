@@ -1,9 +1,15 @@
 (ns semantic-ui.modules.progress
+  (:refer-hoplon :exclude [progress])
   (:require [semantic-ui.core :as semui]))
 
 (defelem progress [attr kids]
   (-> attr
       (assoc :extends div :pre-class [:ui] :post-class [:progress])
+      (semui/extelem kids)))
+
+(defelem bar [attr kids]
+  (-> attr
+      (assoc :extends div :post-class [:bar])
       (semui/extelem kids)))
 
 (defmethod do! :progress

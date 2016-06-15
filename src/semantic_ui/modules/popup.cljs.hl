@@ -1,5 +1,6 @@
 (ns semantic-ui.modules.popup
-  (:require [semantic-ui.core :as semui]))
+  (:require [semantic-ui.core :as semui]
+            [cljsjs.semantic-ui]))
 
 (defelem popup [attr kids]
   (-> attr

@@ -43,6 +43,6 @@
              :minor 'inc
              :patch 'zero
              :pre-release 'snapshot)
-    (tests)
     (hoplon :manifest true)
-    (build-jar)))
+    (build-jar)
+    (tests)))

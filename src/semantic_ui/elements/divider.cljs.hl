@@ -15,3 +15,8 @@
   (-> attr
       (assoc :extends divider :post-class [:vertical])
       (semui/extelem kids)))
+
+(defelem hidden-divider [attr kids]
+  (-> attr
+      (assoc :extends divider :post-class [:hidden])
+      (semui/extelem kids)))

@@ -8,6 +8,11 @@
 
 (defmethod do! :modal
   [elem _ v]
+  (when v
+    (.modal (js/jQuery elem) v)))
+
+(defmethod do! :toggle-modal
+  [elem _ v]
   (if v
     (.modal (js/jQuery elem) "show")
     (.modal (js/jQuery elem) "hide")))
